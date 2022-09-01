@@ -24,6 +24,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="@dimen/spacing_0x"
         android:layout_height="@dimen/spacing_0x"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_task"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
