@@ -8,10 +8,15 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/spacing_16x"
+        android:textSize="@dimen/size_40x"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="@string/to_do_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">To do</string>
+    <string name="to_do_list">To do list</string>
 </resources>
