@@ -9,6 +9,6 @@ class TaskList(private val context: Context) : ArrayList<Task>() {
     }
 
     fun readFromFile(){
-        
+
     }
 }
