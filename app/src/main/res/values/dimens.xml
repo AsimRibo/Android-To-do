@@ -4,4 +4,5 @@
     <dimen name="size_40x">40sp</dimen>
     <dimen name="spacing_0x">0dp</dimen>
     <dimen name="spacing_8x">8dp</dimen>
+    <dimen name="spacing_24x">24dp</dimen>
 </resources>
