@@ -15,7 +15,7 @@
         android:layout_height="wrap_content" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilComment"
+        android:id="@+id/tilTask"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
         android:hint="@string/task_details" >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etComment"
+            android:id="@+id/etTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black">
@@ -32,6 +32,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/btnAddTaskDetails"
         android:layout_width="match_parent"
         android:text="@string/add_task"
         android:layout_margin="@dimen/spacing_24x"
