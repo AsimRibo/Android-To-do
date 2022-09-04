@@ -13,7 +13,10 @@ private const val FILE = "tasks.txt"
 class TaskList(private val context: Context) : ArrayList<Task>() {
 
     fun saveInFile() {
-        if (!isExternalStorageWriteable()) return
+        if (!isExternalStorageWriteable()){
+            Log.i("Storage", "No permissions to perform file save")
+            return
+        }
 
         try {
             File(context.getExternalFilesDir(DIR), FILE)
@@ -29,7 +32,10 @@ class TaskList(private val context: Context) : ArrayList<Task>() {
     }
 
     fun readFromFile() {
-        if (!isExternalStorageReadable()) return
+        if (!isExternalStorageReadable()){
+            Log.i("Storage", "No permissions to perform file read")
+            return
+        }
 
         try {
             File(context.getExternalFilesDir(DIR), FILE)
