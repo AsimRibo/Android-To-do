@@ -2,7 +2,7 @@ package hr.asimr.todo.models
 
 private const val DEL = "|"
 
-data class Task(val details: String, val done: Boolean) {
+data class Task(val details: String, var done: Boolean) {
 
     fun prepareForFileLine() = String.format("%s%s%b\n", details, DEL, done)
 

@@ -9,8 +9,8 @@ import hr.asimr.todo.models.Task
 
 class TaskAdapter(
     private var tasks: List<Task>,
-    private val onClickCallback: (Task) -> Unit,
-    private val onLongClickCallback:  () -> Boolean
+    private val onClickChangeTaskDoneStatus: (Task) -> Unit,
+    private val onLongClickDelete:  (Task) -> Boolean
 ): RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -21,8 +21,9 @@ class TaskAdapter(
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         holder.bind(tasks[position])
         holder.itemView.setOnLongClickListener{
+            onLongClickDelete(tasks[position])
             notifyItemRemoved(position)
-            onLongClickCallback()
+            true
         }
     }
 
@@ -36,7 +37,7 @@ class TaskAdapter(
                     if (task.done) R.drawable.done else R.drawable.not_done
                 )
                 binding.btnCompleted.setOnClickListener{
-                    onClickCallback(task)
+                    onClickChangeTaskDoneStatus(task)
                     notifyItemChanged(tasks.indexOf(task))
                 }
             }
