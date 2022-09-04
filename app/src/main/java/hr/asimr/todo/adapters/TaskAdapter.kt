@@ -8,7 +8,7 @@ import hr.asimr.todo.databinding.ItemTaskBinding
 import hr.asimr.todo.models.Task
 
 class TaskAdapter(
-    private var tasks: List<Task>,
+    private val tasks: MutableList<Task>,
     private val onClickChangeTaskDoneStatus: (Task) -> Unit,
     private val onLongClickDelete:  (Task) -> Boolean
 ): RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
@@ -25,6 +25,11 @@ class TaskAdapter(
             notifyItemRemoved(position)
             true
         }
+    }
+
+    fun addTask(task: Task){
+        tasks.add(task)
+        notifyItemInserted(tasks.lastIndex)
     }
 
     override fun getItemCount() = tasks.size

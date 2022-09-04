@@ -22,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTasks"
         android:layout_width="@dimen/spacing_0x"
         android:layout_height="@dimen/spacing_0x"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

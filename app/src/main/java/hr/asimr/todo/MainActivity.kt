@@ -2,10 +2,12 @@ package hr.asimr.todo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import hr.asimr.todo.adapters.TaskAdapter
 import hr.asimr.todo.databinding.ActivityMainBinding
 import hr.asimr.todo.databinding.DialogAddTaskBinding
+import hr.asimr.todo.models.Task
 import hr.asimr.todo.models.TaskList
 
 class MainActivity : AppCompatActivity() {
@@ -19,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initList()
-        initListeners()
         initTasksRecycler()
+        initListeners()
     }
 
     private fun initList() {
@@ -32,6 +34,11 @@ class MainActivity : AppCompatActivity() {
             taskList,
             onClickChangeTaskDoneStatus = { task -> task.done = !task.done },
             onLongClickDelete = { task -> taskList.remove(task) }
+        )
+        binding.rvTasks.adapter = tasksAdapter
+
+        binding.rvTasks.addItemDecoration(
+            DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         )
     }
 
@@ -47,7 +54,11 @@ class MainActivity : AppCompatActivity() {
             dialog.setContentView(bottomSheetBinding.root)
 
             bottomSheetBinding.btnAddTaskDetails.setOnClickListener {
-                bottomSheetBinding.etTask.text?.clear()
+                if (bottomSheetBinding.etTask.text.toString().isNotBlank()){
+                    tasksAdapter.addTask(Task(bottomSheetBinding.etTask.text.toString().trim(), false))
+                    bottomSheetBinding.etTask.text?.clear()
+                    dialog.dismiss()
+                }
             }
 
             dialog.show()
