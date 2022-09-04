@@ -2,6 +2,7 @@ package hr.asimr.todo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import hr.asimr.todo.adapters.TaskAdapter
@@ -40,6 +41,18 @@ class MainActivity : AppCompatActivity() {
         binding.rvTasks.addItemDecoration(
             DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (taskList.isEmpty()){
+            taskList.readFromFile()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        taskList.saveInFile()
     }
 
     private fun initListeners() {

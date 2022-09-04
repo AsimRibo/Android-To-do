@@ -22,6 +22,7 @@ class TaskList(private val context: Context) : ArrayList<Task>() {
                         bw.write(task.prepareForFileLine())
                     }
                 }
+            Log.i("Storage", "File written")
         } catch (e: Exception) {
             Log.e(javaClass.name, e.toString(), e)
         }
@@ -37,6 +38,7 @@ class TaskList(private val context: Context) : ArrayList<Task>() {
                         add(Task.parseFromFileLine(line))
                     }
                 }
+            Log.i("Storage", "File read")
         } catch (e: Exception) {
             Log.e(javaClass.name, e.toString(), e)
         }
