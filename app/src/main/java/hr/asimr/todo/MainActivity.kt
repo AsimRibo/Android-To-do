@@ -2,6 +2,9 @@ package hr.asimr.todo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.BounceInterpolator
+import android.view.animation.DecelerateInterpolator
+import android.view.animation.OvershootInterpolator
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -23,9 +26,46 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        animateListImage()
+        animateToDoHeader()
+        animatePenLineImage()
+
         initList()
         initTasksRecycler()
         initListeners()
+    }
+
+    private fun animatePenLineImage() = with(binding.ivPenLine) {
+        translationX = -1100f
+        animate()
+            .translationX(0f)
+            .setInterpolator(DecelerateInterpolator())
+            .setDuration(600)
+            .setStartDelay(800)
+            .start()
+    }
+
+    private fun animateToDoHeader() = with(binding.tvHeader) {
+        alpha = 0f
+        scaleX = 0.5f
+        scaleY = 0.5f
+        animate()
+            .alpha(1f)
+            .scaleX(1f)
+            .scaleY(1f)
+            .setInterpolator(OvershootInterpolator())
+            .setDuration(800)
+            .start()
+    }
+
+    private fun animateListImage() = with(binding.ivList) {
+        translationY = -1100f
+        animate()
+            .translationY(0f)
+            .setInterpolator(BounceInterpolator())
+            .setDuration(1000)
+            .setStartDelay(800)
+            .start()
     }
 
     private fun initList() {
