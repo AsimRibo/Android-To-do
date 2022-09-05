@@ -2,17 +2,17 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="@dimen/spacing_16x"
-    android:background="@color/dark_grey"
-    android:layout_height="wrap_content" >
+    android:background="@color/dark_grey">
 
     <TextView
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@color/light_blue"
         android:textSize="32sp"
-        android:text="@string/add_new_task"
-        android:layout_height="wrap_content" />
+        android:text="@string/add_new_task"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilTask"
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_16x"
-        android:hint="@string/task_details" >
+        android:hint="@string/task_details">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTask"
@@ -33,11 +33,11 @@
 
     <Button
         android:id="@+id/btnAddTaskDetails"
-        android:layout_width="match_parent"
-        android:text="@string/add_task"
         style="@style/RoundedPrimaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_24x"
-        android:textAllCaps="false"
-        android:layout_height="wrap_content" />
+        android:text="@string/add_task"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

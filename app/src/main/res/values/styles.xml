@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="RoundedPrimaryButton" parent="Widget.MaterialComponents.Button">
         <item name="textAllCaps">false</item>
         <item name="cornerRadius">@dimen/spacing_24x</item>
