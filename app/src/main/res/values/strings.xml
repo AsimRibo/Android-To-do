@@ -8,4 +8,5 @@
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="delete_confirmation">Are you sure?</string>
+    <string name="no_tasks_for_now">No tasks for now :)</string>
 </resources>

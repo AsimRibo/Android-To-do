@@ -7,6 +7,7 @@ import android.view.animation.BounceInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.OvershootInterpolator
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -35,6 +36,16 @@ class MainActivity : AppCompatActivity() {
         initList()
         initTasksRecycler()
         initListeners()
+    }
+
+    private fun setVisibilities() {
+        if (taskList.isEmpty()) {
+            binding.tvEmptyState.isVisible = true
+            binding.rvTasks.isVisible = false
+        } else {
+            binding.tvEmptyState.isVisible = false
+            binding.rvTasks.isVisible = true
+        }
     }
 
     private fun animatePenLineImage() = with(binding.ivPenLine) {
@@ -96,6 +107,7 @@ class MainActivity : AppCompatActivity() {
                 val position = taskList.indexOf(task)
                 taskList.remove(task)
                 tasksAdapter.notifyItemRemoved(position)
+                setVisibilities()
             }
             .show()
     }
@@ -104,6 +116,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         if (taskList.isEmpty()) {
             taskList.readFromFile()
+            setVisibilities()
         }
     }
 
@@ -127,6 +140,7 @@ class MainActivity : AppCompatActivity() {
             bottomSheetBinding.btnAddTaskDetails.setOnClickListener {
                 if (bottomSheetBinding.etTask.text.toString().isNotBlank()) {
                     tasksAdapter.addTask(Task(bottomSheetBinding.etTask.text.toString().trim(), false))
+                    setVisibilities()
                     bottomSheetBinding.etTask.text?.clear()
                     dialog.dismiss()
                 }

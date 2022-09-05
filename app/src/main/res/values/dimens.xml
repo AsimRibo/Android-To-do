@@ -6,4 +6,5 @@
     <dimen name="spacing_8x">8dp</dimen>
     <dimen name="spacing_24x">24dp</dimen>
     <dimen name="spacing_80x">80dp</dimen>
+    <dimen name="size_32x">32sp</dimen>
 </resources>
