@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
 
             dialog.setContentView(bottomSheetBinding.root)
             dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-            
+
             bottomSheetBinding.btnAddTaskDetails.setOnClickListener {
                 if (bottomSheetBinding.etTask.text.toString().isNotBlank()) {
                     tasksAdapter.addTask(Task(bottomSheetBinding.etTask.text.toString().trim(), false))

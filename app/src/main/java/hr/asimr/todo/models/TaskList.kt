@@ -14,7 +14,7 @@ class TaskList(private val context: Context) : ArrayList<Task>() {
 
     fun saveInFile() {
         if (!isExternalStorageWriteable()) {
-            Log.i("Storage", "No permissions to perform file save")
+            Log.i("Storage", "No permissions to perform file save.")
             return
         }
 
@@ -33,7 +33,7 @@ class TaskList(private val context: Context) : ArrayList<Task>() {
 
     fun readFromFile() {
         if (!isExternalStorageReadable()) {
-            Log.i("Storage", "No permissions to perform file read")
+            Log.i("Storage", "No permissions to perform file read.")
             return
         }
 
