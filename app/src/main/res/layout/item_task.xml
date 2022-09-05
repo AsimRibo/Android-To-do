@@ -11,6 +11,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/dark_grey"
         app:cardCornerRadius="@dimen/spacing_8x">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_8x"
-                android:textColor="@color/black"
+                android:textColor="@color/light_blue"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btnCompleted"
                 app:layout_constraintTop_toTopOf="parent"
