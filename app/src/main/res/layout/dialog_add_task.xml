@@ -1,43 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="@dimen/spacing_16x"
-    android:background="@color/dark_grey">
+    android:layout_height="wrap_content" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/light_blue"
-        android:textSize="32sp"
-        android:text="@string/add_new_task"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilTask"
-        style="@style/FormTextInput"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_16x"
-        android:hint="@string/task_details">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_16x"
+        android:background="@color/dark_grey">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etTask"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_blue"
+            android:textSize="32sp"
+            android:text="@string/add_new_task"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTask"
+            style="@style/FormTextInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/light_blue">
+            android:layout_marginTop="@dimen/spacing_16x"
+            android:hint="@string/task_details">
 
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_blue">
 
-    <Button
-        android:id="@+id/btnAddTaskDetails"
-        style="@style/RoundedPrimaryButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_24x"
-        android:text="@string/add_task"
-        android:textAllCaps="false"/>
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnAddTaskDetails"
+            style="@style/RoundedPrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_24x"
+            android:text="@string/add_task"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -2,6 +2,7 @@ package hr.asimr.todo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.view.animation.BounceInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.OvershootInterpolator
@@ -121,7 +122,7 @@ class MainActivity : AppCompatActivity() {
             val bottomSheetBinding = DialogAddTaskBinding.inflate(layoutInflater)
 
             dialog.setContentView(bottomSheetBinding.root)
-
+            dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
             bottomSheetBinding.btnAddTaskDetails.setOnClickListener {
                 if (bottomSheetBinding.etTask.text.toString().isNotBlank()) {
                     tasksAdapter.addTask(Task(bottomSheetBinding.etTask.text.toString().trim(), false))

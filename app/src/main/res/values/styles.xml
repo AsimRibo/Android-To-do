@@ -24,5 +24,4 @@
         <item name="postSplashScreenTheme">@style/Theme.ToDo</item>
         <item name="windowSplashScreenBackground">@color/ic_launcher_background</item>
     </style>
-
 </resources>
