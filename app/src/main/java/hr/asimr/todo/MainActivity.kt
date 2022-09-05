@@ -8,6 +8,7 @@ import android.view.animation.OvershootInterpolator
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import hr.asimr.todo.adapters.TaskAdapter
 import hr.asimr.todo.databinding.ActivityMainBinding
 import hr.asimr.todo.databinding.DialogAddTaskBinding
@@ -76,13 +77,26 @@ class MainActivity : AppCompatActivity() {
         tasksAdapter = TaskAdapter(
             taskList,
             onClickChangeTaskDoneStatus = { task -> task.done = !task.done },
-            onLongClickDelete = { task -> taskList.remove(task) }
+            onLongClickDelete = { task -> deleteTask(task) }
         )
         binding.rvTasks.adapter = tasksAdapter
 
         binding.rvTasks.addItemDecoration(
             DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         )
+    }
+
+    private fun deleteTask(task: Task) {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.delete))
+            .setMessage(getString(R.string.delete_confirmation))
+            .setNegativeButton(getString(R.string.cancel), null)
+            .setPositiveButton(getString(R.string.delete)) { _, _ ->
+                val position = taskList.indexOf(task)
+                taskList.remove(task)
+                tasksAdapter.notifyItemRemoved(position)
+            }
+            .show()
     }
 
     override fun onResume() {

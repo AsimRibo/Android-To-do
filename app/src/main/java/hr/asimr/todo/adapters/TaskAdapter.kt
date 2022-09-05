@@ -10,7 +10,7 @@ import hr.asimr.todo.models.Task
 class TaskAdapter(
     private val tasks: MutableList<Task>,
     private val onClickChangeTaskDoneStatus: (Task) -> Unit,
-    private val onLongClickDelete: (Task) -> Boolean
+    private val onLongClickDelete: (Task) -> Unit
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -22,7 +22,6 @@ class TaskAdapter(
         holder.bind(tasks[position])
         holder.itemView.setOnLongClickListener {
             onLongClickDelete(tasks[position])
-            notifyItemRemoved(position)
             true
         }
     }
