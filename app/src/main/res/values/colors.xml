@@ -10,6 +10,7 @@
     <color name="grey_blue">#395B64</color>
     <color name="dark_grey">#2C3333</color>
     <color name="light_blue">#E7F6F2</color>
+    <color name="light_grey_blue">#A5C9CA</color>
     <color name="error_color">#F18F01</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/light_blue</color>
 </resources>
