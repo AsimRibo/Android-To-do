@@ -4,18 +4,19 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/spacing_16x"
+    android:background="@color/dark_grey"
     android:layout_height="wrap_content" >
 
     <TextView
         android:layout_width="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/light_blue"
         android:textSize="32sp"
         android:text="@string/add_new_task"
         android:layout_height="wrap_content" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilTask"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/FormTextInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_16x"
@@ -34,6 +35,7 @@
         android:id="@+id/btnAddTaskDetails"
         android:layout_width="match_parent"
         android:text="@string/add_task"
+        style="@style/RoundedPrimaryButton"
         android:layout_margin="@dimen/spacing_24x"
         android:textAllCaps="false"
         android:layout_height="wrap_content" />

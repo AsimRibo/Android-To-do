@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RoundedPrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/spacing_24x</item>
+        <item name="android:padding">@dimen/spacing_16x</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/grey_blue</item>
+        <item name="android:textColor">@color/light_blue</item>
+    </style>
+
+    <style name="FormTextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="errorTextColor">@color/error_color</item>
+        <item name="errorIconTint">@color/error_color</item>
+        <item name="boxStrokeErrorColor">@color/error_color</item>
+        <item name="boxStrokeColor">@color/light_blue</item>
+        <item name="android:textColorHint">@color/light_blue</item>
+        <item name="hintTextColor">@color/light_blue</item>
+    </style>
+</resources>
