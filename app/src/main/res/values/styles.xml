@@ -17,4 +17,11 @@
         <item name="android:textColorHint">@color/light_blue</item>
         <item name="hintTextColor">@color/light_blue</item>
     </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.ToDo</item>
+        <item name="windowSplashScreenBackground">@color/ic_launcher_background</item>
+    </style>
+
 </resources>

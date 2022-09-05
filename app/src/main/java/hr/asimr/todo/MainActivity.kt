@@ -2,7 +2,7 @@ package hr.asimr.todo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import hr.asimr.todo.adapters.TaskAdapter
@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var taskList: TaskList
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (taskList.isEmpty()){
+        if (taskList.isEmpty()) {
             taskList.readFromFile()
         }
     }
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             dialog.setContentView(bottomSheetBinding.root)
 
             bottomSheetBinding.btnAddTaskDetails.setOnClickListener {
-                if (bottomSheetBinding.etTask.text.toString().isNotBlank()){
+                if (bottomSheetBinding.etTask.text.toString().isNotBlank()) {
                     tasksAdapter.addTask(Task(bottomSheetBinding.etTask.text.toString().trim(), false))
                     bottomSheetBinding.etTask.text?.clear()
                     dialog.dismiss()
