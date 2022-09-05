@@ -33,6 +33,7 @@
                 android:id="@+id/btnCompleted"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:contentDescription="@string/task_status"
                 android:layout_margin="@dimen/spacing_8x"
                 android:background="@drawable/not_done"
                 app:layout_constraintBottom_toBottomOf="parent"
