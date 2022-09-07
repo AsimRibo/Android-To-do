@@ -120,8 +120,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onPause() {
-        super.onPause()
+    override fun onStop() {
+        super.onStop()
         taskList.saveInFile()
     }
 
